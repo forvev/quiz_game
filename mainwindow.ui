@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>800</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>200</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Akashi&quot;;
+color: rgb(85, 85, 127);
+background-color: rgb(88, 133, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>PLAY</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>250</y>
+        <width>200</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Akashi&quot;;
+color: rgb(85, 85, 127);
+background-color: rgb(88, 133, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>EXIT</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>0</y>
+        <width>501</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="MyRes.qrc">:/new/prefix1/imagine/football_wallpaper.jpg</pixmap>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2"/>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEdytuj">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionKopiuj"/>
+    <addaction name="actionWklej"/>
+    <addaction name="actionWytnij"/>
+   </widget>
+   <widget class="QMenu" name="menuPlik">
+    <property name="title">
+     <string>Plik</string>
+    </property>
+    <addaction name="actionZapisz"/>
+    <addaction name="actionWyj_cie"/>
+   </widget>
+   <widget class="QMenu" name="menuO_mnie">
+    <property name="title">
+     <string>Program</string>
+    </property>
+    <addaction name="actionAutor"/>
+    <addaction name="actionOpis"/>
+    <addaction name="actionQT"/>
+   </widget>
+   <addaction name="menuPlik"/>
+   <addaction name="menuEdytuj"/>
+   <addaction name="menuO_mnie"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionKopiuj">
+   <property name="icon">
+    <iconset resource="MyRes.qrc">
+     <normaloff>:/new/prefix1/imagine/copy.png</normaloff>:/new/prefix1/imagine/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionWklej">
+   <property name="icon">
+    <iconset resource="MyRes.qrc">
+     <normaloff>:/new/prefix1/imagine/paste.png</normaloff>:/new/prefix1/imagine/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Wklej</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionWytnij">
+   <property name="icon">
+    <iconset resource="MyRes.qrc">
+     <normaloff>:/new/prefix1/imagine/cut-132-554165.png</normaloff>:/new/prefix1/imagine/cut-132-554165.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionZapisz">
+   <property name="text">
+    <string>Zapisz</string>
+   </property>
+  </action>
+  <action name="actionWyj_cie">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAutor">
+   <property name="text">
+    <string>Author</string>
+   </property>
+  </action>
+  <action name="actionOpis">
+   <property name="text">
+    <string>Opis</string>
+   </property>
+  </action>
+  <action name="actionQT">
+   <property name="text">
+    <string>QT</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="MyRes.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>589</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>568</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

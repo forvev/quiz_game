@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>imagine/cut.png</file>
+        <file>imagine/copy.png</file>
+        <file>imagine/paste.png</file>
+        <file>imagine/cut-132-554165.png</file>
+        <file>imagine/football_wallpaper.jpg</file>
+    </qresource>
+</RCC>
