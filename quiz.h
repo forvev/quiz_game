@@ -22,6 +22,7 @@ public:
     void setTime_for_quiz(int time);
     //void get_score(End *temp);
     void setQuestions_for_quiz(int value);
+    void setName_for_quiz(QString temp);
 
 private slots:
     void on_pushButton_clicked();
@@ -46,6 +47,7 @@ private:
     QTimer *s1_timer;//zegar
     int time_for_quiz;
     int points_scored=0;
+    QString player_name;
 
 public:
 

@@ -12,7 +12,7 @@
 
 Quiz::Quiz(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Quiz), fatal_value(0), time_for_quiz(100)
+    ui(new Ui::Quiz), fatal_value(0), time_for_quiz(100), player_name("Unknown")
 {
     ui->setupUi(this);
     qDebug()<<"Jestem w quiz!";
@@ -31,10 +31,9 @@ Quiz::Quiz(QWidget *parent) :
     ui->checkBox_3->setText(answer_3[0]);
     ui->checkBox_4->setText(answer_4[0]);
 
-    quiz_end = new End;
+    /*quiz_end = new End;
 
-    ui->stackedWidget->insertWidget(2, quiz_end);
-
+    ui->stackedWidget->insertWidget(2, quiz_end);*/
     //tworzymy zegar
     qDebug()<<time_for_quiz;
     s1_timer = new QTimer(this);
@@ -73,7 +72,7 @@ void Quiz::on_pushButton_clicked()
     qDebug()<<"current count: "<<current_count<<"question count: "<<qs_count;
     check_answer();
     qDebug()<<"Punkty: "<<points_scored;
-    quiz_end->set_score(points_scored);//na biezaco zmieniamy wynik przy koncowym wyswietleniu
+
 
 
     if(max_question_pom>0 && current_count==max_question-1){//gdy uzytkownik poda ilosc pytan
@@ -81,6 +80,17 @@ void Quiz::on_pushButton_clicked()
        qDebug()<<"current co ";
        ui->label_2->clear();
        s1_timer->stop();//zatrzymujemy zegra, zeby nie wyskoczylo nam powiadomienie
+
+       qDebug()<<"USER: "<<points_scored;
+
+       quiz_end = new End;
+
+       quiz_end->set_score(points_scored);
+       quiz_end->set_player_name(player_name);
+       quiz_end->write_date();
+       quiz_end->read_date();
+
+       ui->stackedWidget->insertWidget(2, quiz_end);
        ui->stackedWidget->setCurrentIndex(2);
     }
     else{
@@ -97,6 +107,16 @@ void Quiz::on_pushButton_clicked()
             qDebug()<<"current count:fsdfsdf ";
            ui->label_2->clear();
            s1_timer->stop();//zatrzymujemy zegra, zeby nie wyskoczylo nam powiadomienie
+           qDebug()<<"NORMAL: "<<points_scored;
+
+           quiz_end = new End;
+
+           quiz_end->set_score(points_scored);
+           quiz_end->set_player_name(player_name);
+           quiz_end->write_date();
+           quiz_end->read_date();
+
+           ui->stackedWidget->insertWidget(2, quiz_end);
            ui->stackedWidget->setCurrentIndex(2);
        }
    }
@@ -273,7 +293,14 @@ void Quiz::UpdateTime(){
 
         msgBox.information(this,"Information","Time has gone.",QMessageBox::Ok);
         s1_timer->stop();
+        quiz_end = new End;
 
+        quiz_end->set_score(points_scored);
+        quiz_end->set_player_name(player_name);
+        quiz_end->write_date();
+        quiz_end->read_date();
+
+        ui->stackedWidget->insertWidget(2, quiz_end);
         ui->stackedWidget->setCurrentIndex(2);
 
     }
@@ -292,4 +319,9 @@ void Quiz::setQuestions_for_quiz(int value){
     qDebug()<<"Quiz max ques:"<<value;
     max_question=value;
     max_question_pom++;
+}
+
+void Quiz::setName_for_quiz(QString temp){
+    player_name=temp;
+    qDebug()<<"Name:"<<player_name;
 }

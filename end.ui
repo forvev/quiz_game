@@ -49,6 +49,16 @@
       <string>0</string>
      </property>
     </widget>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>100</y>
+       <width>256</width>
+       <height>192</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_2"/>
   </widget>

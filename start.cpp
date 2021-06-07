@@ -57,6 +57,7 @@ void start::on_pushButton_clicked()
 
         if(ui->lineEdit_2->text().toInt()!=0) quiz_start->setTime_for_quiz(ui->lineEdit_2->text().toInt());
         if(ui->lineEdit->text().toInt()!=0) quiz_start->setQuestions_for_quiz(ui->lineEdit->text().toInt());
+        quiz_start->setName_for_quiz(ui->lineEdit_3->text());
 
         ui->stackedWidget->insertWidget(2,quiz_start);
 
@@ -73,6 +74,7 @@ void start::on_pushButton_clicked()
 
         if(ui->lineEdit_2->text().toInt()!=0) quiz_start->setTime_for_quiz(ui->lineEdit_2->text().toInt());
         if(ui->lineEdit->text().toInt()!=0) quiz_start->setQuestions_for_quiz(ui->lineEdit->text().toInt());
+        quiz_start->setName_for_quiz(ui->lineEdit_3->text());
 
         ui->stackedWidget->insertWidget(2,quiz_start);
 

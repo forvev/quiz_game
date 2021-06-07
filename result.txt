@@ -1,0 +1,10 @@
+
+Wynik: 1. Mon Jun 7 23:29:19 2021
+Wynik: 0. Mon Jun 7 23:29:33 2021
+Wynik: 0. Mon Jun 7 23:29:43 2021
+: 1| Mon Jun 7 23:39:06 2021
+: 2| Mon Jun 7 23:40:39 2021
+: 1| Mon Jun 7 23:41:42 2021
+: 1| Mon Jun 7 23:43:12 2021
+: 1| Mon Jun 7 23:44:17 2021
+Artur: 1| Mon Jun 7 23:45:34 2021
