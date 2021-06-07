@@ -30,7 +30,8 @@ private slots:
 
 private:
     Ui::Quiz *ui;
-    int qs_count;
+    int qs_count;//ile pytan w pliku
+    int qs_count_temp;
     QString *question;
     QString *answer;
     QString *answer_2;
@@ -40,12 +41,14 @@ private:
     int current_count=0;//przy ktorym obecnie pytaniu jestesmy
     int fatal_value;//blokuje przejscie do nastepnego pytania w przypadku zaznaczenia wiecej niz jednej opcji
     int max_question;
+    int max_question_pom=0;
     End *quiz_end;
     QTimer *s1_timer;//zegar
     int time_for_quiz;
+    int points_scored=0;
 
 public:
-    int points_scored;
+
 
 };
 

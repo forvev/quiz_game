@@ -12,7 +12,7 @@
 
 Quiz::Quiz(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Quiz), fatal_value(0), time_for_quiz(4)
+    ui(new Ui::Quiz), fatal_value(0), time_for_quiz(100)
 {
     ui->setupUi(this);
     qDebug()<<"Jestem w quiz!";
@@ -36,6 +36,7 @@ Quiz::Quiz(QWidget *parent) :
     ui->stackedWidget->insertWidget(2, quiz_end);
 
     //tworzymy zegar
+    qDebug()<<time_for_quiz;
     s1_timer = new QTimer(this);
     QObject::connect(s1_timer, SIGNAL(timeout()),this,SLOT(UpdateTime()));
     s1_timer->start(1000);
@@ -68,22 +69,36 @@ void Quiz::on_pushButton_clicked()
     //qDebug()<<fatal_value;
     //if(current_count==0) check_answer();
 
+
     qDebug()<<"current count: "<<current_count<<"question count: "<<qs_count;
     check_answer();
     qDebug()<<"Punkty: "<<points_scored;
     quiz_end->set_score(points_scored);//na biezaco zmieniamy wynik przy koncowym wyswietleniu
-    if(fatal_value==0 && current_count<qs_count){
-        current_count++;
-        ui->label_2->clear();
-        ui->checkBox->setChecked(false);
-        ui->checkBox_2->setChecked(false);
-        ui->checkBox_3->setChecked(false);
-        ui->checkBox_4->setChecked(false);
-        if(current_count!=qs_count) fill_in();
-   }
-    if(qs_count==current_count){
-        qDebug()<<"current count:fsdfsdf ";
+
+
+    if(max_question_pom>0 && current_count==max_question-1){//gdy uzytkownik poda ilosc pytan
+       //current_count++;
+       qDebug()<<"current co ";
+       ui->label_2->clear();
+       s1_timer->stop();//zatrzymujemy zegra, zeby nie wyskoczylo nam powiadomienie
        ui->stackedWidget->setCurrentIndex(2);
+    }
+    else{
+        if(fatal_value==0 && current_count<qs_count){
+            current_count++;
+            ui->label_2->clear();
+            ui->checkBox->setChecked(false);
+            ui->checkBox_2->setChecked(false);
+            ui->checkBox_3->setChecked(false);
+            ui->checkBox_4->setChecked(false);
+            if(current_count!=qs_count) fill_in();
+       }
+        if(qs_count==current_count){
+            qDebug()<<"current count:fsdfsdf ";
+           ui->label_2->clear();
+           s1_timer->stop();//zatrzymujemy zegra, zeby nie wyskoczylo nam powiadomienie
+           ui->stackedWidget->setCurrentIndex(2);
+       }
    }
 }
 
@@ -186,6 +201,8 @@ void Quiz::select_question(){
     int i=0, temp=0;//wyznacza linie do zapisu
     qs_count = in.readLine().toInt();
 
+    //if (max_question_pom>0) qs_count=max_question; //ustawiamy max. liczbe pytan podana przez uzytkownika
+    qDebug()<<"qs_count"<<max_question_pom;
     question= new QString[qs_count];
     answer = new QString[qs_count];
     answer_2 = new QString[qs_count];
@@ -193,7 +210,10 @@ void Quiz::select_question(){
     answer_4 = new QString[qs_count];
     cur_answer = new int[qs_count];
 
-    while(!in.atEnd()){
+    int temp_line=qs_count*6;
+
+    //while(!in.atEnd()){
+    while(temp_line>0){
         QString line=in.readLine();
 
         /*if(i==0) ui->label->setText(line);
@@ -214,6 +234,7 @@ void Quiz::select_question(){
             i=0;
             temp++;
         }
+        temp_line--;
 
     }
     file.close();
@@ -268,5 +289,7 @@ void Quiz::setTime_for_quiz(int time){
 }*/
 
 void Quiz::setQuestions_for_quiz(int value){
+    qDebug()<<"Quiz max ques:"<<value;
     max_question=value;
+    max_question_pom++;
 }

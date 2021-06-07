@@ -25,11 +25,12 @@ private slots:
 
     void on_lineEdit_editingFinished();
 
-    int on_lineEdit_2_editingFinished();
+    void on_lineEdit_2_editingFinished();
 
 private:
     Ui::start *ui;
     Quiz *quiz_start;
+    int number_of_question;
 
 };
 
