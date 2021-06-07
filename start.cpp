@@ -30,6 +30,9 @@ void start::on_pushButton_clicked()
     //q.active_timer();
     quiz_start = new Quiz;
 
+    quiz_start->setTime_for_quiz(ui->lineEdit_2->text().toInt());
+    //quiz_start->
+
     ui->stackedWidget->insertWidget(2,quiz_start);
 
     ui->stackedWidget->setCurrentIndex(2);
@@ -47,8 +50,16 @@ void start::on_lineEdit_editingFinished()//liczba pytan
 
 
 
-void start::on_lineEdit_2_editingFinished()//w jakim czasie
+int start::on_lineEdit_2_editingFinished()//w jakim czasie
 {
     //Quiz q;
     //q.setTime_for_quiz(ui->lineEdit_2->text().toInt());
+    qDebug()<<"time:"<<ui->lineEdit_2->text().toInt();
+    return ui->lineEdit_2->text().toInt();
 }
+
+/*void start::get_time(){
+    //ui->lineEdit_2->setText(ui->lineEdit_2->text());
+    qDebug()<<"time:"<<ui->lineEdit_2->text();
+    //return ui->lineEdit_2->text().toInt();
+}*/

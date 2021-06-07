@@ -42,7 +42,7 @@ background-color: rgb(88, 133, 255);
       <string>Nacisnij jesli chcesz rozpoczac quiz</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>-3</x>
@@ -83,7 +83,7 @@ color: rgb(85, 85, 127);
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>190</x>
        <y>60</y>
        <width>41</width>
        <height>22</height>
@@ -93,7 +93,7 @@ color: rgb(85, 85, 127);
     <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
-       <x>400</x>
+       <x>420</x>
        <y>60</y>
        <width>41</width>
        <height>22</height>

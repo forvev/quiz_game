@@ -7,6 +7,8 @@
 #include <QTime>
 #include <QTimer>
 #include <QMessageBox>
+#include <start.h> //get_time - pobieramy czas od uzytkownika na quiz
+#include <end.h>
 
 Quiz::Quiz(QWidget *parent) :
     QDialog(parent),
@@ -14,18 +16,12 @@ Quiz::Quiz(QWidget *parent) :
 {
     ui->setupUi(this);
     qDebug()<<"Jestem w quiz!";
-    //ui->stackedWidget->setCurrentIndex(0);//przy uruchamianiu wyswietlaj zawsze pierwsza strone
-    //pobranie liczby pytan
-    /*QFile file("C:/Users/Artur/Desktop/studia/II semestr/C++ obiektowy/lab10QT/Project/question.txt");
-    if(!file.open(QFile::ReadOnly | QFile::Text)){
-        qDebug() << "Nie mozna otworzyc pliku!";
-        return;
-    }
-    QTextStream in(&file);
-    qs_count = in.readLine().toInt();
-    qDebug()<<qs_count;
 
-    file.close();*/
+
+    //start *a=new start;
+    //time_for_quiz=a->on_lineEdit_2_editingFinished();
+
+    qDebug()<<time_for_quiz;
 
     select_question();
     //ui->label->setText("fdsf");//odczytuje
@@ -74,7 +70,8 @@ void Quiz::on_pushButton_clicked()
 
     qDebug()<<"current count: "<<current_count<<"question count: "<<qs_count;
     check_answer();
-
+    qDebug()<<"Punkty: "<<points_scored;
+    quiz_end->set_score(points_scored);//na biezaco zmieniamy wynik przy koncowym wyswietleniu
     if(fatal_value==0 && current_count<qs_count){
         current_count++;
         ui->label_2->clear();
@@ -176,7 +173,7 @@ void Quiz::check_answer(){
 
 //ODCZYT
 void Quiz::select_question(){
-    QString filename="C:/Users/Artur/Desktop/studia/II semestr/C++ obiektowy/lab10QT/Project/question.txt"; //C:\\Users\\Artur\\Desktop\\studia\\II semestr\\C++ obiektowy\\lab10QT
+    QString filename="C:/Users/Artur/Desktop/studia/II semestr/C++ obiektowy/lab10QT/Project/quiz_game/question.txt"; //C:\\Users\\Artur\\Desktop\\studia\\II semestr\\C++ obiektowy\\lab10QT
     QFile file(filename);
 
     if(!file.open(QFile::ReadOnly | QFile::Text)){
@@ -264,4 +261,12 @@ void Quiz::UpdateTime(){
 
 void Quiz::setTime_for_quiz(int time){
     time_for_quiz=time;
+}
+
+/*void Quiz::get_score(End *temp){
+    temp->score=points_scored;
+}*/
+
+void Quiz::setQuestions_for_quiz(int value){
+    max_question=value;
 }

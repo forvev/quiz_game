@@ -20,6 +20,8 @@ public:
     void check_answer();
     void active_timer();
     void setTime_for_quiz(int time);
+    //void get_score(End *temp);
+    void setQuestions_for_quiz(int value);
 
 private slots:
     void on_pushButton_clicked();
@@ -36,12 +38,14 @@ private:
     QString *answer_4;
     int *cur_answer;
     int current_count=0;//przy ktorym obecnie pytaniu jestesmy
-    int points_scored;
     int fatal_value;//blokuje przejscie do nastepnego pytania w przypadku zaznaczenia wiecej niz jednej opcji
+    int max_question;
     End *quiz_end;
-
     QTimer *s1_timer;//zegar
     int time_for_quiz;
+
+public:
+    int points_scored;
 
 };
 
