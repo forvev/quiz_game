@@ -25,6 +25,9 @@ private slots:
 
     void on_actionQT_triggered();
 
+    //void moveHome();
+    void on_actionWyj_cie_triggered();
+
 private:
     Ui::MainWindow *ui;
     start open;

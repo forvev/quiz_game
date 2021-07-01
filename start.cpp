@@ -40,6 +40,7 @@ start::start(QWidget *parent) :
 
 start::~start()
 {
+    qDebug()<<"Usuwam start";
     delete ui;
     delete quiz_start;
 }
@@ -62,6 +63,11 @@ void start::on_pushButton_clicked()
         ui->stackedWidget->insertWidget(2,quiz_start);
 
         ui->stackedWidget->setCurrentIndex(2);
+        //this->~start();
+        qDebug()<<"Usuwam !!!!1";
+        //delete this;
+
+
     }
     else if(ui->lineEdit->text().toInt() > number_of_question || ui->lineEdit->text().toInt() <= 0){
         QMessageBox msgBox;
@@ -77,8 +83,11 @@ void start::on_pushButton_clicked()
         quiz_start->setName_for_quiz(ui->lineEdit_3->text());
 
         ui->stackedWidget->insertWidget(2,quiz_start);
-
+        //this->close();
         ui->stackedWidget->setCurrentIndex(2);
+         //qDebug()<<"Usuwam !!1!2";
+        //delete this;
+
     }
 }
 
@@ -106,4 +115,8 @@ void start::on_lineEdit_2_editingFinished()//w jakim czasie
     //ui->lineEdit_2->setText(ui->lineEdit_2->text());
     qDebug()<<"time:"<<ui->lineEdit_2->text();
     //return ui->lineEdit_2->text().toInt();
+}*/
+
+/*void start::delete_obj(){
+
 }*/

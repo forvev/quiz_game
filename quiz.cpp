@@ -12,7 +12,7 @@
 
 Quiz::Quiz(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Quiz), fatal_value(0), time_for_quiz(100), player_name("Unknown")
+    ui(new Ui::Quiz), fatal_value(0), time_for_quiz(120), player_name("Unknown")
 {
     ui->setupUi(this);
     qDebug()<<"Jestem w quiz!";
@@ -45,6 +45,7 @@ Quiz::Quiz(QWidget *parent) :
 
 Quiz::~Quiz()
 {
+    qDebug()<<"Usuwam Quiz";
     delete ui;
     delete [] question;
     delete [] answer;
@@ -69,19 +70,19 @@ void Quiz::on_pushButton_clicked()
     //if(current_count==0) check_answer();
 
 
-    qDebug()<<"current count: "<<current_count<<"question count: "<<qs_count;
+    //qDebug()<<"current count: "<<current_count<<"question count: "<<qs_count;
     check_answer();
-    qDebug()<<"Punkty: "<<points_scored;
+    //qDebug()<<"Punkty: "<<points_scored;
 
 
 
     if(max_question_pom>0 && current_count==max_question-1){//gdy uzytkownik poda ilosc pytan
        //current_count++;
-       qDebug()<<"current co ";
+       //qDebug()<<"current co ";
        ui->label_2->clear();
        s1_timer->stop();//zatrzymujemy zegra, zeby nie wyskoczylo nam powiadomienie
 
-       qDebug()<<"USER: "<<points_scored;
+       //qDebug()<<"USER: "<<points_scored;
 
        quiz_end = new End;
 
@@ -92,6 +93,7 @@ void Quiz::on_pushButton_clicked()
 
        ui->stackedWidget->insertWidget(2, quiz_end);
        ui->stackedWidget->setCurrentIndex(2);
+       //delete this;
     }
     else{
         if(fatal_value==0 && current_count<qs_count){
@@ -104,7 +106,7 @@ void Quiz::on_pushButton_clicked()
             if(current_count!=qs_count) fill_in();
        }
         if(qs_count==current_count){
-            qDebug()<<"current count:fsdfsdf ";
+           // qDebug()<<"current count:fsdfsdf ";
            ui->label_2->clear();
            s1_timer->stop();//zatrzymujemy zegra, zeby nie wyskoczylo nam powiadomienie
            qDebug()<<"NORMAL: "<<points_scored;
@@ -118,6 +120,7 @@ void Quiz::on_pushButton_clicked()
 
            ui->stackedWidget->insertWidget(2, quiz_end);
            ui->stackedWidget->setCurrentIndex(2);
+           //delete this;
        }
    }
 }
@@ -208,6 +211,7 @@ void Quiz::check_answer(){
 
 //ODCZYT
 void Quiz::select_question(){
+    qDebug()<<"czytam!";
     QString filename="C:/Users/Artur/Desktop/studia/II semestr/C++ obiektowy/lab10QT/Project/quiz_game/question.txt"; //C:\\Users\\Artur\\Desktop\\studia\\II semestr\\C++ obiektowy\\lab10QT
     QFile file(filename);
 
@@ -220,9 +224,9 @@ void Quiz::select_question(){
     QTextStream in(&file);
     int i=0, temp=0;//wyznacza linie do zapisu
     qs_count = in.readLine().toInt();
-
+    //qDebug()<<"temp_line"<<max_question;
     //if (max_question_pom>0) qs_count=max_question; //ustawiamy max. liczbe pytan podana przez uzytkownika
-    qDebug()<<"qs_count"<<max_question_pom;
+    qDebug()<<"qs_count"<<qs_count;
     question= new QString[qs_count];
     answer = new QString[qs_count];
     answer_2 = new QString[qs_count];
@@ -233,7 +237,9 @@ void Quiz::select_question(){
     int temp_line=qs_count*6;
 
     //while(!in.atEnd()){
+    qDebug()<<"temp_line"<<temp_line;
     while(temp_line>0){
+        qDebug()<<"temp_line"<<temp_line;
         QString line=in.readLine();
 
         /*if(i==0) ui->label->setText(line);

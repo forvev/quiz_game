@@ -5,6 +5,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDateTime>
+#include <start.h>
+#include <mainwindow.h>
 
 End::End(QWidget *parent) :
     QWidget(parent),
@@ -13,11 +15,22 @@ End::End(QWidget *parent) :
     ui->setupUi(this);
 
     //qDebug()<<"Jestem w end"<<result_score;
+    //start start_2;
+    /*MainWindow obj;
+    ui->stackedWidget->insertWidget(0, &obj);*/
+
+
+
+    //connect(&start_2, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
+    //connect()
+    //connect(&start_2, SIGNAL(moveHome()), this, SLOT(on_pushButton_clicked()));
 }
 
 End::~End()
 {
+    qDebug()<<"Usuwam end";
     delete ui;
+    //delete [] read_file;
 }
 
 
@@ -41,7 +54,7 @@ void End::write_date(){
 
     QTextStream out(&file);
     qDebug()<<"Name:"<<player_name;
-    out<<player_name<<": "<<score<<"| "<<QDateTime::currentDateTime().toString()<<"\n";
+    out<<player_name<<": "<<score<<" | "<<QDateTime::currentDateTime().toString()<<"\n";
 
     //out<<ui->label_2;
 
@@ -64,10 +77,14 @@ void End::read_date(){
 
     QTextStream in(&file);
 
+    //int i=0;
     while(!in.atEnd()){
         QString line=in.readLine();
             //ui->listWidget->setText(line);
             ui->listWidget->addItem(line);
+            file_lines_count++;
+            //read_file[i]=line;
+            //i++;
         }
 
 
@@ -77,4 +94,23 @@ void End::read_date(){
 
 void End::set_player_name(QString temp){
     player_name=temp;
+}
+
+
+
+/*void End::on_pushButton_clicked()
+{
+    //ui->stackedWidget->setCurrentIndex(1);
+    //emit HomeClicked();
+
+
+}*/
+
+
+void End::on_pushButton_clicked()
+{
+   /*start open_2;
+   ui->stackedWidget->insertWidget(1,&open_2);
+   ui->stackedWidget->setCurrentIndex(1);*/
+   //QWidget::close();
 }

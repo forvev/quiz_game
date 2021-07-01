@@ -1,11 +1,11 @@
-3
+10
 Kto w ostatnim sezonie pobił rekord strzelecki w Bundeslidze?
 1.Robert Lewandowski
 2.Lionel Messi
 3.Grzegorz Lato
 4.Nikt
 1
-Z kim m.in. Polska zagra w grupie w nadchodzących mistrzostwach europy?
+Z kim m.in. Polska zagra w grupie w nadchodzącym EURO?
 1.Niemcy
 2.Szwecja
 3.Norwegia
@@ -17,3 +17,49 @@ W jakiej drużynie gra polski bramkarz, Wojciech Szczęsny?
 3.Juventus Turyn
 4.Bayern Monachium
 3
+W którym roku Wisła Sandomierz grała baraże o drugą ligę?
+1.2005
+2.2017
+3.2015
+4.2011
+3
+Ile razy FC Barcelona zostawała mistrzem Hiszpanii?
+1.22
+2.32
+3.26
+4.15
+3
+Kto w sezonie 1997/98 zdobył Złotego Buta?
+1.Nikos Machlas
+2.Roy Makaay
+3.Paweł Janas
+4.Wojciech Kowalczyk
+1
+Kazimierz Deyna grał w:
+1.ŁKS Łódź
+2.Wisła Kraków
+3.Pogoń Siedlce
+4.Polonia Warszawa
+1
+Kto jest obecnie mistrzem Francji?
+1.Paris Saint-Germain
+2.AS Monaco
+3.OSC Lille
+4.Olympique Marsyllia
+3
+Kto jest obecnym prezesem PZPN?
+1.Konrad Surmański
+2.Zbigniew Boniek
+3.Grzegorz Lato
+4.Jakub Błaszczykowski
+2
+Z kim reprezentacja Polski odpadła na EURO 2016?
+1.Hiszpania
+2.Szwajcaria
+3.Portugalia
+4.Niemcy
+3 
+
+
+
+

@@ -43,14 +43,14 @@ private:
     int fatal_value;//blokuje przejscie do nastepnego pytania w przypadku zaznaczenia wiecej niz jednej opcji
     int max_question;
     int max_question_pom=0;
-    End *quiz_end;
+
     QTimer *s1_timer;//zegar
     int time_for_quiz;
     int points_scored=0;
     QString player_name;
 
 public:
-
+    End *quiz_end;
 
 };
 

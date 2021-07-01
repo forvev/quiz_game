@@ -7,21 +7,27 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>500</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(249, 255, 252);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
+      <x>10</x>
+      <y>-10</y>
       <width>800</width>
       <height>500</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(249, 255, 252);</string>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="pushButton">
@@ -34,13 +40,23 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 9pt &quot;Akashi&quot;;
-color: rgb(85, 85, 127);
-background-color: rgb(88, 133, 255);
+       <string notr="true">color: rgb(0, 0, 255);
+background-color: rgb(239, 255, 243);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;
+
+
+
+
+
+
+
+
+
 </string>
       </property>
       <property name="text">
-       <string>PLAY</string>
+       <string>GRAJ</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_2">
@@ -53,13 +69,13 @@ background-color: rgb(88, 133, 255);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 9pt &quot;Akashi&quot;;
-color: rgb(85, 85, 127);
-background-color: rgb(88, 133, 255);
-</string>
+       <string notr="true">color: rgb(0, 0, 255);
+background-color: rgb(239, 255, 243);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;</string>
       </property>
       <property name="text">
-       <string>EXIT</string>
+       <string>WYJŚCIE</string>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -93,7 +109,7 @@ background-color: rgb(88, 133, 255);
    </property>
    <widget class="QMenu" name="menuEdytuj">
     <property name="title">
-     <string>Edit</string>
+     <string>Edytuj</string>
     </property>
     <addaction name="actionKopiuj"/>
     <addaction name="actionWklej"/>
@@ -103,7 +119,6 @@ background-color: rgb(88, 133, 255);
     <property name="title">
      <string>Plik</string>
     </property>
-    <addaction name="actionZapisz"/>
     <addaction name="actionWyj_cie"/>
    </widget>
    <widget class="QMenu" name="menuO_mnie">
@@ -125,7 +140,7 @@ background-color: rgb(88, 133, 255);
      <normaloff>:/new/prefix1/imagine/copy.png</normaloff>:/new/prefix1/imagine/copy.png</iconset>
    </property>
    <property name="text">
-    <string>Copy</string>
+    <string>Kopiuj</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -149,33 +164,44 @@ background-color: rgb(88, 133, 255);
      <normaloff>:/new/prefix1/imagine/cut-132-554165.png</normaloff>:/new/prefix1/imagine/cut-132-554165.png</iconset>
    </property>
    <property name="text">
-    <string>Cut</string>
+    <string>Wytnij</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+X</string>
    </property>
   </action>
-  <action name="actionZapisz">
-   <property name="text">
-    <string>Zapisz</string>
-   </property>
-  </action>
   <action name="actionWyj_cie">
+   <property name="icon">
+    <iconset resource="MyRes.qrc">
+     <normaloff>:/new/prefix1/imagine/exit.jpg</normaloff>:/new/prefix1/imagine/exit.jpg</iconset>
+   </property>
    <property name="text">
-    <string>Exit</string>
+    <string>Wyjście</string>
    </property>
   </action>
   <action name="actionAutor">
+   <property name="icon">
+    <iconset resource="MyRes.qrc">
+     <normaloff>:/new/prefix1/imagine/question.png</normaloff>:/new/prefix1/imagine/question.png</iconset>
+   </property>
    <property name="text">
-    <string>Author</string>
+    <string>Autor</string>
    </property>
   </action>
   <action name="actionOpis">
+   <property name="icon">
+    <iconset resource="MyRes.qrc">
+     <normaloff>:/new/prefix1/imagine/question.png</normaloff>:/new/prefix1/imagine/question.png</iconset>
+   </property>
    <property name="text">
     <string>Opis</string>
    </property>
   </action>
   <action name="actionQT">
+   <property name="icon">
+    <iconset resource="MyRes.qrc">
+     <normaloff>:/new/prefix1/imagine/question.png</normaloff>:/new/prefix1/imagine/question.png</iconset>
+   </property>
    <property name="text">
     <string>QT</string>
    </property>
@@ -192,8 +218,8 @@ background-color: rgb(88, 133, 255);
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>589</x>
-     <y>262</y>
+     <x>219</x>
+     <y>283</y>
     </hint>
     <hint type="destinationlabel">
      <x>568</x>

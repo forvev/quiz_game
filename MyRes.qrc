@@ -5,5 +5,9 @@
         <file>imagine/paste.png</file>
         <file>imagine/cut-132-554165.png</file>
         <file>imagine/football_wallpaper.jpg</file>
+        <file>imagine/question.png</file>
+        <file>imagine/exit.jpg</file>
+        <file>imagine/save.png</file>
+        <file>imagine/play.png</file>
     </qresource>
 </RCC>

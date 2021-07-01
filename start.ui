@@ -13,29 +13,37 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(249, 255, 252);</string>
+  </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>9</y>
-     <width>800</width>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
      <height>500</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(249, 255, 252);</string>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>240</y>
+       <x>230</x>
+       <y>370</y>
        <width>321</width>
        <height>28</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 9pt &quot;Akashi&quot;;
-color: rgb(85, 85, 127);
-background-color: rgb(88, 133, 255);
+      <string notr="true">color: rgb(0, 0, 0);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;
+background-color: rgb(0, 170, 0);
 </string>
      </property>
      <property name="text">
@@ -45,135 +53,174 @@ background-color: rgb(88, 133, 255);
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>-3</x>
-       <y>152</y>
-       <width>1211</width>
-       <height>61</height>
+       <x>0</x>
+       <y>210</y>
+       <width>822</width>
+       <height>115</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QLabel" name="label">
         <property name="styleSheet">
-         <string notr="true">font: 9pt &quot;Akashi&quot;;
-color: rgb(85, 85, 127);
+         <string notr="true">color: rgb(0, 0, 255);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;
+
 
 </string>
         </property>
         <property name="text">
-         <string>na wszysktkie pytania przeznaczono 5 min. Po ukonczeniu czasu nie bedziesz mial/miala mozliwosci dalszej kontynuacji quizu.</string>
+         <string>Po ukonczeniu czasu nie bedziesz mial/miala mozliwosci dalszej kontynuacji quizu.</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_2">
         <property name="styleSheet">
-         <string notr="true">font: 9pt &quot;Akashi&quot;;
-color: rgb(85, 85, 127);
+         <string notr="true">color: rgb(0, 0, 255);
 
-</string>
+font: 9pt &quot;Arial Rounded MT Bold&quot;;</string>
         </property>
         <property name="text">
          <string>Pamietaj iz poprawna jest tylko jedna odpowiedz.</string>
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 255);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Domyslny czas: 2 min. </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 255);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Domyslna liczba pytan: wszystkie dostepne pytania.</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>190</x>
+       <x>240</x>
        <y>60</y>
-       <width>41</width>
-       <height>22</height>
+       <width>281</width>
+       <height>79</height>
       </rect>
      </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 255);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Imie:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_3"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 255);
+
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Podaj czas:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_2"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 255);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;
+</string>
+          </property>
+          <property name="text">
+           <string>Ile pytan chcesz wyznaczyc:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>60</y>
-       <width>41</width>
-       <height>22</height>
+       <x>320</x>
+       <y>30</y>
+       <width>151</width>
+       <height>17</height>
       </rect>
      </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>161</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Ile liczbe pytan chcesz wyznaczyc:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>60</y>
-       <width>111</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Podaj czas(domyślnie...)</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>101</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Dostępne pytania:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>10</y>
-       <width>55</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>60</y>
-       <width>81</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>60</y>
-       <width>55</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Imie:</string>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 255);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Dostepne pytania:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 255);
+
+font: 9pt &quot;Arial Rounded MT Bold&quot;;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="page_2"/>

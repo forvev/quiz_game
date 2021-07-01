@@ -29,8 +29,14 @@ private slots:
 
 private:
     Ui::start *ui;
-    Quiz *quiz_start;
+
     int number_of_question;
+
+public:
+    Quiz *quiz_start;
+
+/*signals:
+    void delete_obj();*/
 
 };
 
